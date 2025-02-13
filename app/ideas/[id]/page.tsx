@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Share2, ArrowLeft, Send, MessageSquare, ThumbsUp, Heart, Laugh, Reply, X, MoreHorizontal, Pencil, Trash2, Home, Users } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Share2, Send, ThumbsUp, Heart, Laugh, Reply, X, MoreHorizontal, Pencil, Trash2, Home, Users } from "lucide-react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Tooltip,
@@ -130,7 +130,7 @@ const mockMessages: Message[] = [
   {
     id: "1",
     user: "John Doe",
-    content: "I have experience with ML models and would love to contribute to this project. I've worked on similar code review systems before.",
+    content: "I have experience with ML models and would love to contribute to this project. I&apos;ve worked on similar code review systems before.",
     timestamp: new Date(Date.now() - 3600000),
     type: 'team',
     reactions: {
@@ -143,7 +143,7 @@ const mockMessages: Message[] = [
     id: "2",
     parentId: "1",
     user: "Jane Smith",
-    content: "That's great! What kind of ML models have you worked with specifically?",
+    content: "That&apos;s great! What kind of ML models have you worked with specifically?",
     timestamp: new Date(Date.now() - 3300000),
     type: 'team',
     reactions: {
@@ -155,7 +155,7 @@ const mockMessages: Message[] = [
   {
     id: "3",
     user: "Mike Johnson",
-    content: "I'm a DevOps engineer and would be interested in helping with the infrastructure setup for this project.",
+    content: "I&apos;m a DevOps engineer and would be interested in helping with the infrastructure setup for this project.",
     timestamp: new Date(Date.now() - 900000),
     type: 'team',
     reactions: {
@@ -205,7 +205,7 @@ const mockApplications: TeamApplication[] = [
     role: "Machine Learning Engineer",
     experience: "3 years of ML experience, worked on similar projects",
     technicalSkills: "Python, TensorFlow, PyTorch, Docker",
-    message: "I'm excited about this project and would love to contribute!",
+    message: "I&apos;m excited about this project and would love to contribute!",
     status: 'pending',
     submittedAt: new Date(2024, 1, 20)
   },
@@ -221,7 +221,7 @@ const mockApplications: TeamApplication[] = [
   }
 ];
 
-export default function IdeaDetailPage({ params }: { params: { id: string } }) {
+export default function IdeaDetailPage({ params: _params }: { params: { id: string } }) {
   const router = useRouter();
   const [isWatching, setIsWatching] = useState(false);
   const [reactions, setReactions] = useState(mockIdea.reactions);
@@ -343,7 +343,7 @@ export default function IdeaDetailPage({ params }: { params: { id: string } }) {
     const messages = {
       hot: "🔥 This idea is on fire! I especially love how it could revolutionize [specific aspect]. The potential impact on [area] is mind-blowing!",
       interesting: "💡 Fascinating approach! Have you considered integrating this with [related technology]? I can see some amazing possibilities there.",
-      tellMeMore: "🤔 I'm really intrigued by this concept! Could you elaborate more on how you plan to handle [specific challenge]? I'd love to dive deeper into the technical details."
+      tellMeMore: "🤔 I&apos;m really intrigued by this concept! Could you elaborate more on how you plan to handle [specific challenge]? I&apos;d love to dive deeper into the technical details."
     };
     
     setMessage(messages[type]);
@@ -792,7 +792,7 @@ export default function IdeaDetailPage({ params }: { params: { id: string } }) {
                 <div className="bg-muted/30 p-4 rounded-lg mb-4 glass-effect">
                   <h3 className="font-semibold mb-2">Looking to Join the Team?</h3>
                   <p className="text-muted-foreground">
-                    Share your relevant experience and how you'd like to contribute to the project. 
+                    Share your relevant experience and how you&apos;d like to contribute to the project. 
                     The team is especially looking for skills in: {idea.requiredSkills.join(', ')}.
                   </p>
                 </div>
