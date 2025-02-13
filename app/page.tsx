@@ -7,44 +7,34 @@ import Link from "next/link";
 function GridBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Base grid */}
-      <div className="absolute inset-0 grid-background" />
+      {/* Base grid - more subtle and barely visible */}
+      <div className="absolute inset-0 neural-grid opacity-[0.03]" />
       
-      {/* Animated intersections */}
+      {/* Intersection points with subtle animations */}
       <div className="absolute inset-0">
-        {/* Top left quadrant */}
-        <div className="absolute top-1/4 left-1/4">
-          <div className="grid-intersection animate-pulse-glow" />
-          <div className="grid-line-horizontal" />
-          <div className="grid-line-vertical" />
+        {/* Center-left intersection */}
+        <div className="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="intersection-pulse [animation-delay:0ms]" />
         </div>
         
-        {/* Top right quadrant */}
-        <div className="absolute top-1/3 right-1/3">
-          <div className="grid-intersection animate-pulse-glow [animation-delay:1s]" />
-          <div className="grid-line-horizontal" />
-          <div className="grid-line-vertical" />
+        {/* Center-right intersection */}
+        <div className="absolute right-1/3 top-1/2 translate-x-1/2 -translate-y-1/2">
+          <div className="intersection-pulse [animation-delay:2000ms]" />
         </div>
         
-        {/* Bottom left quadrant */}
-        <div className="absolute bottom-1/3 left-1/3">
-          <div className="grid-intersection animate-pulse-glow [animation-delay:2s]" />
-          <div className="grid-line-horizontal" />
-          <div className="grid-line-vertical" />
+        {/* Top-center intersection */}
+        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2">
+          <div className="intersection-pulse [animation-delay:4000ms]" />
         </div>
         
-        {/* Bottom right quadrant */}
-        <div className="absolute bottom-1/4 right-1/4">
-          <div className="grid-intersection animate-pulse-glow [animation-delay:3s]" />
-          <div className="grid-line-horizontal" />
-          <div className="grid-line-vertical" />
+        {/* Bottom-center intersection */}
+        <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 translate-y-1/2">
+          <div className="intersection-pulse [animation-delay:6000ms]" />
         </div>
         
-        {/* Center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="grid-intersection animate-pulse-glow [animation-delay:4s]" />
-          <div className="grid-line-horizontal" />
-          <div className="grid-line-vertical" />
+        {/* Center intersection */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="intersection-pulse [animation-delay:8000ms]" />
         </div>
       </div>
     </div>
