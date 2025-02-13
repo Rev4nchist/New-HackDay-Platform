@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Github, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -12,12 +11,6 @@ function GridBackground() {
 }
 
 export default function LandingPage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="min-h-screen w-full relative overflow-hidden bg-background">
       <GridBackground />
@@ -28,7 +21,7 @@ export default function LandingPage() {
             HackDay 2025
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Join the future of AI innovation. Build, collaborate, and shape tomorrow's technology.
+            Join the future of AI innovation. Build, collaborate, and shape tomorrow&apos;s technology.
           </p>
         </div>
 

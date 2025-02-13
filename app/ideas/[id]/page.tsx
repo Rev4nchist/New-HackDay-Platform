@@ -42,6 +42,13 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
+interface SearchResult {
+  id: string;
+  title: string;
+  type: "idea" | "user" | "event" | "setting";
+  description?: string;
+}
+
 // Temporary mock data for a single idea
 const mockIdea = {
   id: "1",
@@ -369,7 +376,7 @@ export default function IdeaDetailPage({ params }: { params: { id: string } }) {
     setEditContent("");
   };
 
-  const handleSearchSelect = (result: any) => {
+  const handleSearchSelect = (result: SearchResult) => {
     if (result.type === "idea") {
       router.push(`/ideas/${result.id}`);
     }
