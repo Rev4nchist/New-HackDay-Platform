@@ -9,16 +9,22 @@ const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
+  display: 'swap',
+  preload: true,
 })
+
 const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+  display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
   title: 'HackDay 2025 - Idea Management Portal',
   description: 'Discover and engage with innovative project ideas for HackDay 2025',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({
@@ -34,10 +40,13 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          storageKey="hackday-theme"
         >
           <TanstackClientProvider>
-            <Navigation />
-            <main>{children}</main>
+            <div className="relative flex min-h-screen flex-col">
+              <Navigation />
+              <main className="flex-1">{children}</main>
+            </div>
           </TanstackClientProvider>
         </ThemeProvider>
       </body>
