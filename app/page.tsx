@@ -6,7 +6,48 @@ import Link from "next/link";
 
 function GridBackground() {
   return (
-    <div className="fixed inset-0 grid-background opacity-50" />
+    <div className="fixed inset-0 overflow-hidden">
+      {/* Base grid */}
+      <div className="absolute inset-0 grid-background" />
+      
+      {/* Animated intersections */}
+      <div className="absolute inset-0">
+        {/* Top left quadrant */}
+        <div className="absolute top-1/4 left-1/4">
+          <div className="grid-intersection animate-pulse-glow" />
+          <div className="grid-line-horizontal" />
+          <div className="grid-line-vertical" />
+        </div>
+        
+        {/* Top right quadrant */}
+        <div className="absolute top-1/3 right-1/3">
+          <div className="grid-intersection animate-pulse-glow [animation-delay:1s]" />
+          <div className="grid-line-horizontal" />
+          <div className="grid-line-vertical" />
+        </div>
+        
+        {/* Bottom left quadrant */}
+        <div className="absolute bottom-1/3 left-1/3">
+          <div className="grid-intersection animate-pulse-glow [animation-delay:2s]" />
+          <div className="grid-line-horizontal" />
+          <div className="grid-line-vertical" />
+        </div>
+        
+        {/* Bottom right quadrant */}
+        <div className="absolute bottom-1/4 right-1/4">
+          <div className="grid-intersection animate-pulse-glow [animation-delay:3s]" />
+          <div className="grid-line-horizontal" />
+          <div className="grid-line-vertical" />
+        </div>
+        
+        {/* Center */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="grid-intersection animate-pulse-glow [animation-delay:4s]" />
+          <div className="grid-line-horizontal" />
+          <div className="grid-line-vertical" />
+        </div>
+      </div>
+    </div>
   );
 }
 
