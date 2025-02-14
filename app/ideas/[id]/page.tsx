@@ -221,7 +221,9 @@ const mockApplications: TeamApplication[] = [
   }
 ];
 
-export default function IdeaDetailPage({ params: _params }: { params: { id: string } }) {
+export default function IdeaDetailPage({ params }: { params: { id: string } }) {
+  // Avoid unused variable warning by using the id
+  const { id } = params;
   const router = useRouter();
   const [isWatching, setIsWatching] = useState(false);
   const [reactions, setReactions] = useState(mockIdea.reactions);
